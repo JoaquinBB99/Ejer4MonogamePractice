@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\cancion-de-super-mario-bros.mp3" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
