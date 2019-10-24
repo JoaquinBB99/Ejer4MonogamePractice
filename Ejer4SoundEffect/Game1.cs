@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace Ejer4SoundEffect
 {
@@ -11,7 +12,7 @@ namespace Ejer4SoundEffect
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        public Song musicaFondo;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -35,11 +36,18 @@ namespace Ejer4SoundEffect
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
+        /// 
+        
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            MediaPlayer.Volume = 1;
+            musicaFondo = Content.Load<Song>("cancion-de-super-mario-bros");
+            MediaPlayer.Play(musicaFondo);
+            
+            MediaPlayer.IsRepeating = true;
+            
             // TODO: use this.Content to load your game content here
         }
 
